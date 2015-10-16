@@ -1,9 +1,10 @@
-/*
- * bubble_sort.cpp
- *
- *  Created on: Oct 15, 2015
- *      Author: henrylyc
- */
+//============================================================================
+// Name        : Week4-BubbleSort.cpp
+// Author      : Henry Wan
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Bubble Sort in C++, Ansi-style
+//============================================================================
 
 #include <iostream>
 using namespace std;
@@ -31,3 +32,4 @@ int main() {
     }
     return 0;
 }
+
