@@ -1,7 +1,7 @@
 //============================================================================
 // Name        : Week4-OddEven.cpp
-// Author      : 
-// Version     :
+// Author      : Henry Wan
+// Version     : 1
 // Copyright   : Your copyright notice
 // Description : OddEven sort in C++, Ansi-style
 //============================================================================
