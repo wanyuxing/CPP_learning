@@ -28,8 +28,8 @@ int main() {
 	for (int i = 0; i < 4; i++) total += count[i];
 	for (int i = 0; i < 4; i++) rate[i] = 100.0 * count[i] / total;
 	cout << "1-18: " << fixed << setprecision(2) << rate[0] << '%' << endl;
-	cout << "19-35: " << fixed << setprecision(2) << rate[0] << '%' << endl;
-	cout << "36-60: " << fixed << setprecision(2) << rate[0] << '%' << endl;
-	cout << "60-: " << fixed << setprecision(2) << rate[0] << '%' << endl;
+	cout << "19-35: " << fixed << setprecision(2) << rate[1] << '%' << endl;
+	cout << "36-60: " << fixed << setprecision(2) << rate[2] << '%' << endl;
+	cout << "60-: " << fixed << setprecision(2) << rate[3] << '%' << endl;
 	return 0;
 }
