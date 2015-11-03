@@ -6,33 +6,38 @@
 // Description : Word in C++, Ansi-style
 //============================================================================
 
-#include<iostream>
 #include<stdio.h>
-using namespace std;
-
+#include<string.h>
 int main()
 {
-    char boy, temp;
-    int end = 0, num = 0;
-    char a[55];
-    scanf("%c", &boy);
-    a[0] = 0;
-    while (scanf("%c", &temp) != EOF)
+    int n,i;
+    char a[45]={'\0'},b[85]={'\0'};
+    int lenA=0,lenB=0;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
     {
-        if (temp == boy)
+        scanf("%s",a);
+        lenA=strlen(a);
+        if(lenB+1+lenA<79)
         {
-            end++;
-            num++;
-            a[end] = num;
+            if(lenB>0)
+                strcat(b," ");
+            strcat(b,a);
+            lenB=strlen(b);
+        }
+        else if(lenB+1+lenA==80||lenB+1+lenA==79)
+        {
+            printf("%s %s\n",b,a);
+            lenB=0;
+            b[0]='\0';
         }
         else
         {
-            num++;
-            printf("%d %d\n", a[end], num);
-            end--;
-            if (end < 0) return 0;
+            printf("%s\n",b);
+            strcpy(b,a);
+            lenB=strlen(b);
         }
     }
+    printf("%s\n",b);
     return 0;
 }
-
