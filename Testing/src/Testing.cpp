@@ -1,28 +1,38 @@
 //============================================================================
 // Name        : Testing.cpp
-// Author      : 
+// Author      : Henry Wan
 // Version     :
 // Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
+// Description : Word in C++, Ansi-style
 //============================================================================
 
-#include <iostream>
+#include<iostream>
+#include<stdio.h>
 using namespace std;
 
-int main() {
-	int n;
-	cin >> n;
-	int bottle, cap, empty;
-	cap = empty = bottle = n / 2;
-	while (cap >= 4 || empty >= 2)
-	{
-		int new_bottle = cap / 4 + empty / 2;
-		cap %= 4;
-		empty %= 2;
-		cap += new_bottle;
-		empty += new_bottle;
-		bottle += new_bottle;
-	}
-	cout << bottle << endl;
-	return 0;
+int main()
+{
+    char boy, temp;
+    int end = 0, num = 0;
+    char a[55];
+    scanf("%c", &boy);
+    a[0] = 0;
+    while (scanf("%c", &temp) != EOF)
+    {
+        if (temp == boy)
+        {
+            end++;
+            num++;
+            a[end] = num;
+        }
+        else
+        {
+            num++;
+            printf("%d %d\n", a[end], num);
+            end--;
+            if (end < 0) return 0;
+        }
+    }
+    return 0;
 }
+
