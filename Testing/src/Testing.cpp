@@ -6,38 +6,44 @@
 // Description : Word in C++, Ansi-style
 //============================================================================
 
-#include<stdio.h>
-#include<string.h>
+#include <iostream>
+using namespace std;
+
+int partition(int a[],int l,int r)
+{
+    int i,j,x,temp;
+    i = l;
+    j = r+1;
+    x = a[l];
+    while (1)
+    {
+        while(a[++i] > x);
+        while(a[--j] < x);
+        if(i >= j) break;
+        temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+    a[l] = a[j];
+    a[j] = x;
+    return j;
+}
+
+int random_partition(int a[],int l,int r)
+{
+    int i = l+rand()%(r-l+1);
+    int temp = a[i];
+    a[i] = a[l];
+    a[l] = temp;
+    return partition(a,l,r);
+}
+
 int main()
 {
-    int n,i;
-    char a[45]={'\0'},b[85]={'\0'};
-    int lenA=0,lenB=0;
-    scanf("%d",&n);
-    for(i=0;i<n;i++)
-    {
-        scanf("%s",a);
-        lenA=strlen(a);
-        if(lenB+1+lenA<79)
-        {
-            if(lenB>0)
-                strcat(b," ");
-            strcat(b,a);
-            lenB=strlen(b);
-        }
-        else if(lenB+1+lenA==80||lenB+1+lenA==79)
-        {
-            printf("%s %s\n",b,a);
-            lenB=0;
-            b[0]='\0';
-        }
-        else
-        {
-            printf("%s\n",b);
-            strcpy(b,a);
-            lenB=strlen(b);
-        }
-    }
-    printf("%s\n",b);
-    return 0;
+	int a[5] = {5, 4, 3, 2, 1};
+	int j = partition(a, 0, 4);
+	cout << j;
+	//for (int i = 0; i < 5; i++)
+	//{ cout << a[i] << endl; }
+	return 0;
 }
