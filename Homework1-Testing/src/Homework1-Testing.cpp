@@ -7,6 +7,9 @@
 //============================================================================
 
 #include <iostream>
+#include <stdio.h>
+#include <string>
+#include <cstdio>
 using namespace std;
 
 class Student
