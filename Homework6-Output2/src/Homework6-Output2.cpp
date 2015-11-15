@@ -1,17 +1,19 @@
 //============================================================================
-// Name        : Testing.cpp
+// Name        : Homework6-Output2.cpp
 // Author      : Henry Wan
 // Version     :
 // Copyright   : Your copyright notice
-// Description : Word in C++, Ansi-style
+// Description : Output2 in C++, Ansi-style
 //============================================================================
-#include <iostream>
-#include <string>
 
+#include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main() {
-	string a = "abc";
-	cout << a.find("c", 0);
-	return 0;
+	int a;
+	cin >>  a;
+	cout << hex << a << endl;
+	cout.fill('0');
+	cout << dec << setw(10) << a << endl;
 }
