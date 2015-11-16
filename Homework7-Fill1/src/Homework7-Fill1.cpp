@@ -1,18 +1,19 @@
 //============================================================================
-// Name        : Testing.cpp
+// Name        : Homework7-Fill1.cpp
 // Author      : Henry Wan
 // Version     :
 // Copyright   : Your copyright notice
-// Description : Word in C++, Ansi-style
+// Description : Filling 1 in C++, Ansi-style
 //============================================================================
 
-#include <list>
 #include <iostream>
 #include <iterator>
+#include <set>
 using namespace std;
-int main(){
-	list <int> v; list <int>::const_iterator ii;
-	for( ii = v.begin(); ii != v.end ();ii ++ )
-		cout << * ii;
-	return 0;
+int main() {
+    int a[] = {8,7,8,9,6,2,1};
+    set<int> v(a, a+7);
+    ostream_iterator<int> o(cout," ");
+    copy( v.begin(),v.end(),o);
+    return 0;
 }
