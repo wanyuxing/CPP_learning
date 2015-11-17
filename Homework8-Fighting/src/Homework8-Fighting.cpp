@@ -17,13 +17,20 @@ int main() {
 	map<int, int> a, b, ans;
 	a[1000000000] = 1;
 	b[1] = 1000000000;
-	for (int i = 0; i < n; i++)
+	bool fst = true;
+	while (n--)
 	{
 		int id, power;
 		cin >> id >> power;
 		a[power] = id;
 		b[id] = power;
-		ans[id] = (a.lower_bound(b[id])-1)->first;
+		if (fst) { ans[id] = 1; fst = false; continue; }
+		map<int, int>::iterator low = a.lower_bound(b[id]);
+		if (low != a.begin()) low--;
+		map<int, int>::iterator high = a.upper_bound(b[id]);
+		if (high != a.end())
+		{ (power - low->first <= high->first - power)? ans[id] = low->second:ans[id] = high->second; }
+		else { ans[id] = low->second;}
 	}
 	for (map<int, int>::iterator it = ans.begin(); it != ans.end(); it++)
 	{
